@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import {v4 as uuidv4} from "uuid"
 
 function Form() {
     const [todo, makeTodo] = useState({
@@ -11,9 +12,17 @@ function Form() {
         makeTodo({ ...todo, task: e.target.value })
     }
 
+    function handleSubmit(e) {
+        e.preventDefault()
+        if (todo.task.trim()) {
+            createTodo({...todo, id: uuidv4()})
+            makeTodo({...todo, task: ""})
+        }
+    }
+
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <input
                 name="task"
                 type="text"
