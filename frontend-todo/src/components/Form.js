@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import {v4 as uuidv4} from "uuid"
 
-function Form() {
+function Form({ createTodo }) {
     const [todo, makeTodo] = useState({
         id: "",
         task: "",
@@ -28,7 +28,7 @@ function Form() {
                 type="text"
                 value={todo.task}
                 onChange={handleTaskInputChange} />
-            <button type="submit" />
+            <button type="submit">submit</button>
         </form>
     )
 }
