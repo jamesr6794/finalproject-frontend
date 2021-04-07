@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Form from "./components/Form"
 import List from "./components/List"
 import './App.css';
+import Typography from "@material-ui/core/Typography"
 
 const storage = "frontend-todo"
 
@@ -43,12 +44,10 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <p>My To-Do List</p>
+        <Typography style={{padding:20}} variant="h1">My To-Do List</Typography>
         <Form createTodo={createTodo} />
         <List todos={todos} toggleFinish={toggleFinish}
         deleteTodo={deleteTodo} />
-      </header>
     </div>
   )
 }
