@@ -37,12 +37,17 @@ function App() {
     )
   }
 
+  function deleteTodo(id) {
+    makeTodos(todos.filter(todo => todo.id !== id))
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <p>My To-Do List</p>
         <Form createTodo={createTodo} />
-        <List todos={todos} toggleFinish={toggleFinish} />
+        <List todos={todos} toggleFinish={toggleFinish}
+        deleteTodo={deleteTodo} />
       </header>
     </div>
   )

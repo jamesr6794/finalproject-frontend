@@ -1,8 +1,12 @@
 import React from "react"
 
-function Todo({ todo, toggleFinish }) {
+function Todo({ todo, toggleFinish, deleteTodo }) {
     function CheckboxClick() {
         toggleFinish(todo.id)
+    }
+
+    function deleteClick() {
+        deleteTodo(todo.id)
     }
 
 
@@ -18,7 +22,7 @@ function Todo({ todo, toggleFinish }) {
                 }}>
                     {todo.task}
             </li>
-            <button>X</button>
+            <button onClick={deleteClick}>X</button>
         </div>        
     )
 }
