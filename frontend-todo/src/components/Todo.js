@@ -1,12 +1,19 @@
 import React from "react"
 
-function Todo({ todo }) {
+function Todo({ todo, toggleFinish }) {
+    function CheckboxClick() {
+        toggleFinish(todo.id)
+    }
+
+
+
+
     return (
         <div style={{ display: "flex" }}>
-            <input type="checkbox" />
+            <input type="checkbox" onClick={CheckboxClick}/>
             <li 
                 style={{
-                    color: "white",
+                    color: "black",
                     textDecoration: todo.finished ? "line-through" : null
                 }}>
                     {todo.task}

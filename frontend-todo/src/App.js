@@ -24,12 +24,25 @@ function App() {
     makeTodos([todo, ...todos])
   }
 
+  function toggleFinish(id) {
+    makeTodos(
+      todos.map(todo => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            finished: !todo.finished
+          }
+        } return todo
+      })
+    )
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <p>My To-Do List</p>
         <Form createTodo={createTodo} />
-        <List todos={todos} />
+        <List todos={todos} toggleFinish={toggleFinish} />
       </header>
     </div>
   )
