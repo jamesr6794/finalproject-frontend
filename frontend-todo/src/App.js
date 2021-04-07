@@ -1,12 +1,24 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Form from "./components/Form"
 import List from "./components/List"
-
 import './App.css';
 
+const storage = "frontend-todo"
 
 function App() {
   const [todos, makeTodos] = useState([])
+
+  useEffect(() => {
+    const storedTodo = JSON.parse(localStorage.getItem(storage))
+    if (storedTodo) {
+      makeTodos(storedTodo)
+    }
+
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem(storage, JSON.stringify(todos))
+  }, [todos])
 
   function createTodo(todo) {
     makeTodos([todo, ...todos])
