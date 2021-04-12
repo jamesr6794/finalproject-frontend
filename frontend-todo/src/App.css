@@ -17,3 +17,7 @@ body, html, #root {
      align-items: center;
 }
 
+li {
+    text-align: initial;
+}
+
