@@ -24,6 +24,7 @@ function Todo({ todo, toggleFinish, deleteTodo }) {
                     {todo.task}
             </Typography>
             <IconButton onClick={deleteClick}>
+                X
                 {/* <CloseIcon /> */}
             </IconButton>
         </ListItem>        
