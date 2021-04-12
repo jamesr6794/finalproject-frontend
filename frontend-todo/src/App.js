@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Form from "./components/Form"
-import List from "./components/List"
+import ListToDo from "./components/ListToDo"
 import './App.css';
 import Typography from "@material-ui/core/Typography"
 
@@ -46,8 +46,10 @@ function App() {
     <div className="App">
         <Typography style={{padding:20}} variant="h1">My To-Do List</Typography>
         <Form createTodo={createTodo} />
-        <List todos={todos} toggleFinish={toggleFinish}
-        deleteTodo={deleteTodo} />
+        <ListToDo 
+          todos={todos} 
+          toggleFinish={toggleFinish}
+          deleteTodo={deleteTodo} />
     </div>
   )
 }
