@@ -29,6 +29,7 @@
 <ul>
 <li> Login and Sign Up functionality</li>
 <li> Continue adding Material UI </li>
+</ul>
 
 ## Deployed Site
 <ul>
